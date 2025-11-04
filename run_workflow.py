@@ -10,27 +10,27 @@ def main_workflow():
     print("--- Workflow Started ---")
     
     # --- STEP 1: CLEANING ---
-    step_1_success = True #clean_excel_file()
+    step_1_success = clean_excel_file()
     if not step_1_success:
         print("Workflow stopped: Cleaning step failed.")
         return
 
     # --- STEP 2: SCRAPING ---
-    step_2_success = True #run_scraper()
+    step_2_success = run_scraper()
     if not step_2_success:
         print("Workflow stopped: Scraping step failed.")
         return
 
     # --- STEP 3: SPLIT CUI FILE ---
     print("\n--- Step 3: Splitting file by CUI ---")
-    step_3_success = True #split_valid_codes_by_cui()
+    step_3_success = split_valid_codes_by_cui()
     if not step_3_success:
         print("Workflow stopped: CUI splitting step failed.")
         return
 
     # --- STEP 4: SCRAPE BENEFICIARIES ---
     print("\n--- Step 4: Scraping Beneficiary Data (PNRR) ---")
-    step_4_success = True #run_beneficiary_scraper()
+    step_4_success = run_beneficiary_scraper()
     if not step_4_success:
         print("Workflow stopped: Beneficiary scraping step failed.")
         return
